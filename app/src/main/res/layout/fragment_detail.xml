@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="joke"
+            type="com.example.projokes.model.JokeCategory" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.DetailFragment"
+        android:layout_margin="8dp"
+        android:background="@color/dark_blue">
+
+        <ImageView
+            android:id="@+id/jokeImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_jokes_launcher"
+            android:scaleType="fitCenter"
+            android:minHeight="200dp"/>
+
+        <TextView
+            android:id="@+id/jokeSetup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jokeImage"
+            android:text="@{joke.jokeSetup}"
+            style="@style/Title"
+            android:layout_marginHorizontal="8dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/jokePunchline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jokeSetup"
+            android:text="@{joke.jokePunchline}"
+            style="@style/Text"
+            android:layout_marginHorizontal="8dp"
+            android:layout_margin="4dp"/>
+
+    </RelativeLayout>
+</layout>
